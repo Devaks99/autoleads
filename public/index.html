@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Finder - Cod.ERP</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 40px;
+        background: #f5f5f5;
+      }
+      h1 {
+        color: #222;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background: white;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      th {
+        background-color: #009879;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔍 Lead Finder - Cod.ERP</h1>
+    <p>Digite o nome da empresa e clique em buscar:</p>
+
+    <input type="text" id="empresa" placeholder="Nome da empresa" />
+<button onclick="buscarLeads()">Buscar</button>
+
+<table id="tabela" border="1" style="display:none; margin-top:20px;">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
