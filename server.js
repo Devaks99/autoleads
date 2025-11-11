@@ -17,7 +17,7 @@ const GOOGLE_CX = process.env.GOOGLE_CX;
 const emailVerifier = new EmailVerifier(process.env.HUNTER_API_KEY);
 
 // Middlewares para servir arquivos estáticos e processar JSON
-app.use(express.static("public"));
+app.use(express.static(__dirname));
 app.use(express.json());
 
 // --- FUNÇÕES DE ENRIQUECIMENTO (sem alterações) ---
