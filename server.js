@@ -11,7 +11,7 @@ const GOOGLE_CX = process.env.GOOGLE_CX;
 // Middlewares
 app.use(express.json());
 // Serve arquivos estáticos (index.html, script.js) da pasta raiz do projeto
-app.use(express.static(path.join(__dirname)));
+app.use(express.static('public'))
 
 // Rota para a página principal (necessária para o Express servir o index.html)
 app.get("/", (req, res) => {
@@ -59,6 +59,14 @@ app.post("/api/buscar", async (req, res) => {
     }
   }
 });
+
+// Se não estiver na Vercel, inicia o servidor localmente
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`🔥 Servidor rodando em http://localhost:${PORT}`);
+  });
+}
 
 // Exporta o app para a Vercel
 module.exports = app;
