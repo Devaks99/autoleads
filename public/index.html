@@ -1,59 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lead Finder - Cod.ERP</title>
+    <script async src="https://cse.google.com/cse.js?cx=e429c167437874a47"></script>
+    <title>Lead Finder 2.0 - Cod.ERP</title>
+    <div class="gcse-search"></div>
     <style>
       body {
         font-family: "Segoe UI", sans-serif;
-        margin: 40px;
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 40px;
         background: #f5f5f5;
+        color: #333;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       }
       h1 {
         color: #222;
+        text-align: center;
       }
-      input,
-      button {
-        padding: 10px;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      input, button {
+        padding: 12px;
         font-size: 16px;
-        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
       }
       table {
         width: 100%;
         margin-top: 20px;
         border-collapse: collapse;
-        background: white;
       }
-      th,
-      td {
+      th, td {
         border: 1px solid #ddd;
-        padding: 8px;
+        padding: 12px;
+        text-align: left;
       }
       th {
         background-color: #009879;
         color: white;
       }
+      #status {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
     </style>
-  </head>
-  <body>
-    <h1>🔍 Lead Finder - Cod.ERP</h1>
-    <p>Digite o nome da empresa e clique em buscar:</p>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Lead Finder 2.0</h1>
+        <p>Digite o nome da empresa e, opcionalmente, um cargo para refinar a busca.</p>
 
-    <input type="text" id="empresa" placeholder="Nome da empresa" />
-<button onclick="buscarLeads()">Buscar</button>
+        <div class="form-group">
+            <input type="text" id="empresa" placeholder="Nome da empresa (ex: Google)" />
+            <input type="text" id="cargo" placeholder="Cargo ou palavra-chave (opcional, ex: Vendedor)" />
+            <button onclick="buscarLeads()">Buscar Leads</button>
+        </div>
 
-<table id="tabela" border="1" style="display:none; margin-top:20px;">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+        <div id="status"></div>
 
+        <table id="tabela" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Link do Perfil</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
